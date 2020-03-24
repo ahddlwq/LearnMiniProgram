@@ -1,3 +1,12 @@
 <!--pages/home/home.wxml-->
-<!-- <text>pages/home/home.wxml</text> -->
-<text class="title">Hello world</text>
+<!-- 1.数据展示 -->
+<view>Hello {{name}}</view>
+<view>我的年龄：{{age}}</view>
+
+<!-- 2.列表展示 -->
+<view wx:for="{{movies}}" wx:key="index">{{item}}--{{index}}</view>
+
+<!-- 3.修改数据 -->
+<view>当前计数：{{counter}}</view>
+<button size="mini" bind:tap="increment">+</button>
+<button size="mini" bind:tap="decrement">-</button>
