@@ -1,3 +1,20 @@
 <!--pages/home/home.wxml-->
 <!-- <text>pages/home/home.wxml</text> -->
 <text class="title">Hello world</text>
+<!-- 获取用户信息的方式 -->
+<button size="mini" 
+        open-type="getUserInfo" 
+        bindgetuserinfo="handleGetUserInfo">
+        获取按钮
+</button>
+
+<!-- 展示用户信息的方式 -->
+<open-data type="userNickName"></open-data>
+<open-data type="userGender"></open-data>
+<open-data type="userAvatarUrl"></open-data>
+
+<view bindtap="handleViewClick">{{message}}</view>
+
+<view wx:for="{{array}}" data-item="item" wx:for-index="idx">
+  数组下标：{{idx}}，数组值：{{item}}
+</view>
