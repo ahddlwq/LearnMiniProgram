@@ -3,3 +3,47 @@
   color:red;
   font-size: 30px;
 }
+.box{  
+  width: 300rpx;
+  height: 300rpx;
+  background: orange;
+}
+
+.outer{  
+  width: 400rpx;
+  height: 400rpx;
+  background: orange;
+}
+
+.inner{  
+  width: 200rpx;
+  height: 200rpx;
+  background:gray;
+}
+
+.container{
+  display: flex;
+}
+
+.item{
+  flex: 1;
+  text-align: center;
+}
+
+.view1{  
+  width: 600rpx;
+  height: 600rpx;
+  background:#808080;
+}
+
+.view2{  
+  width: 400rpx;
+  height: 400rpx;
+  background:red;
+}
+
+.view3{  
+  width: 200rpx;
+  height: 200rpx;
+  background:green;
+}

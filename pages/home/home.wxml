@@ -1,3 +1,55 @@
 <!--pages/home/home.wxml-->
-<!-- <text>pages/home/home.wxml</text> -->
-<text class="title">Hello world</text>
+
+<!--1.wxs的定义方式-->
+<!--1.2 定义在单独的wxs文件中，再使用<wxs>标签进行导入-->
+<!--不能使用绝对路径，必须使用相对路径-->
+<!--<wxs src="../../wxs/info.wxs" module="info"/>
+<view>{{info.message}}</view>
+<view>{{info.name}}</view>
+<view>{{info.sum(20,30)}}</view>-->
+
+
+<!--3.wxs的应用案例-->
+<!--不能使用绝对路径，必须使用相对路径-->
+<!--<wxs src="../../wxs/format.wxs" module="format"/>
+<view>{{format.priceFormat(price)}}</view>
+<view>{{format.dateFormat(time, "yyyy-MM-dd hh:mm:ss")}}</view>-->
+
+<!--1.事件处理的回顾-->
+<button bindtap="handleBtnClick" size="mini">按钮</button>
+<!--从1.5.0版本开始, 可以在bind和catch后加上一个冒号-->
+<button bind:tap="handleBtnClick" size="mini">按钮</button>
+<button catchtap="handleBtnClick" size="mini">按钮</button>
+<button catch:tap="handleBtnClick" size="mini">按钮</button>
+
+<view class="box"
+      bind:touchstart="handleTouchStart"
+      bind:touchmove="handleTouchMove"      
+      bind:touchend="handleTouchEnd" 
+      bind:longpress="handleLongPress" 
+      bind:tap="handleTap">常见的事件</view>
+<button bind:tap="handleMyBtnClick" size="mini">我的按钮</button>
+<view class="outer" id="outer" bindtap="handleOuter">外层的view
+  <view class="inner" id="inner" bindtap="handleInner">内层的view</view>
+</view>
+
+<!--4.事件的参数传递-->
+<view class="container">
+  <block wx:for="{{titles}}" wx:key="index">
+    <view class="item" 
+          bindtap="handleItemClick"
+          data-index="{{index}}"
+          data-item="{{item}}">
+      {{item}}
+    </view>
+  </block>
+</view>
+
+<!--5.事件的捕获和冒泡，以及bind和catch的区别-->
+<!-- capture-bind:tap 事件的捕获，从外面到里面-->
+<!-- bind:tap就是事件的冒泡，从里面到外面传递 -->
+<view class="view1" capture-bind:tap="handleCaptureView1" bindtap="handleBindView1">
+    <view class="view2" capture-bind:tap="handleCaptureView2" catchtap="handleBindView2">
+      <view class="view3" capture-bind:tap="handleCaptureView3" bindtap="handleBindView3"></view>      
+    </view>  
+</view>
