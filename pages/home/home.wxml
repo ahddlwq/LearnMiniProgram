@@ -1,3 +1,47 @@
 <!--pages/home/home.wxml-->
 <!-- <text>pages/home/home.wxml</text> -->
 <text class="title">Hello world</text>
+
+<!-- 自定义组件的基本使用 -->
+<!--<my-cpn></my-cpn>
+<my-cpn></my-cpn>
+<my-cpn></my-cpn>-->
+
+<!-- 给自定义组件传递数据 -->
+<my-cpn title="哈哈哈" titleclass="red"></my-cpn>
+<my-cpn title="嘿嘿嘿" titleclass="green"></my-cpn>
+<my-cpn titleclass="blue"></my-cpn>
+
+<!-- 自定义组件内部发出事件 -->
+<view>当前计数：{{counter}}</view>
+<my-event bind:increment="handleIncrement"></my-event>
+
+<!--tab control 练习 -->
+<my-tab titles="{{['流行','新款','精选']}}"
+        bind:itemclick="handleTabClick"></my-tab>
+
+<!--直接选中组件修改数据/调用方法 -->
+<button size="mini" bind:tap="handleBtnClick">修改组件内的数据</button>
+<my-select class="sel-class" id="sel-id"/>
+
+<!--插槽的使用 -->
+<my-slot>
+  <button size="mini">我是插入的按钮</button>
+</my-slot>
+<my-slot>
+  <text>我是文本</text>
+</my-slot>
+<my-slot>
+  <image src="/image/img.jpg"/>
+</my-slot>
+
+<!--多插槽的使用 -->
+<!--1.给每一个插槽一个名字 -->
+<!--2.给组件添加options属性 -->
+<my-mslot>  
+  <button size="mini" slot="slot2">我是插入的按钮</button>  
+  <slider value="60" slot="slot1"/>
+  <text slot="slot3">我是文本</text>
+</my-mslot>
+
+
