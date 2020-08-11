@@ -1,3 +1,5 @@
 <!--pages/home/home.wxml-->
 <!-- <text>pages/home/home.wxml</text> -->
 <text class="title">Hello world</text>
+
+<button size="mini" open-type="share">分享</button>

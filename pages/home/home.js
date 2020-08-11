@@ -60,7 +60,11 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
+  onShareAppMessage: function (options) {
+    return{
+      title:"你好啊",
+      path: "pages/about/about",
+      imageUrl:"图片地址，可以使本地图片/网络图片"
+    }
   }
 })
