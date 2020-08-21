@@ -1,0 +1,16 @@
+<!--pages/detail/detail.wxml-->
+<text>pages/detail/detail.wxml</text>
+
+<!--navigator属性：open-type-->
+<navigator open-type="navigateBack">返回</navigator>
+
+<!--返回上一级-->
+<navigator open-type="navigateBack">返回上一级</navigator>
+
+<!--返回上二级-->
+<navigator open-type="navigateBack" delta="2">返回上二级</navigator>
+
+<!--通过代码返回到首页面-->
+<button size="mini" bind:tap="handleBackHome">通过代码返回</button>
+
+
